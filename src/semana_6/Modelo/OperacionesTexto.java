@@ -140,38 +140,6 @@ public class OperacionesTexto {
         return "1 archivo(s) copiado(s): " + origen.getName() + " -> " + destino.getName();
     }
 
-    public String grep(String texto, String nombreArchivo) throws ConsolaException {
-        if (texto == null || texto.isEmpty()) {
-            throw new NombreInvalidoException("Debe especificar el texto a buscar.");
-        }
-        File archivo = obtenerArchivoExistente(nombreArchivo);
-        String criterio = texto.toLowerCase();
-        StringBuilder coincidencias = new StringBuilder();
-        int totalCoincidencias = 0;
-        int numeroLinea = 0;
-
-        try (FileReader fileReader = new FileReader(archivo);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            String linea;
-            while ((linea = bufferedReader.readLine()) != null) {
-                numeroLinea++;
-                if (linea.toLowerCase().contains(criterio)) {
-                    totalCoincidencias++;
-                    coincidencias.append("Línea ").append(numeroLinea).append(": ").append(linea).append("\n");
-                }
-            }
-        } catch (IOException e) {
-            throw new ConsolaException("Error al buscar en el archivo '" + archivo.getName() + "': " + e.getMessage());
-        }
-
-        if (totalCoincidencias == 0) {
-            return "No se encontraron coincidencias de \"" + texto + "\" en " + archivo.getName() + ".";
-        }
-
-        StringBuilder resultado = new StringBuilder();
-        resultado.append("Buscando \"").append(texto).append("\" en ").append(archivo.getName()).append("...\n");
-        resultado.append(coincidencias);
-        resultado.append(totalCoincidencias).append(" coincidencia(s) encontrada(s).");
-        return resultado.toString();
-    }
+    
+    
 }

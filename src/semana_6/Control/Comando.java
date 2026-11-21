@@ -27,8 +27,7 @@ package semana_6.Control;
         TREE("Tree", "", "Muestra la estructura de carpetas y archivos en forma de árbol.", 0, 0),
         CLS("Cls", "", "Limpia la pantalla.", 0, 0),
         HELP("Help", "", "Muestra la lista de comandos disponibles.", 0, 0),
-        EXIT("Exit", "", "Cierra la aplicación.", 0, 0),
-        GREP("Grep", "<texto> <archivo.ext>", "Busca texto dentro del contenido de un archivo.", 2, Integer.MAX_VALUE);
+        EXIT("Exit", "", "Cierra la aplicación.", 0, 0);
 
         public final String nombre;
         public final String parametros;

@@ -141,22 +141,7 @@ public class Interprete {
 
             case EXIT -> ResultadoComando.salir();
 
-            case GREP -> ResultadoComando.texto(
-                    texto.grep(extraerTextoGrep(linea, comando),
-                            args.get(args.size() - 1)));
         };
-    }
-
-    private String extraerTextoGrep(String linea, Comando comando) {
-        String resto = linea.substring(comando.nombre.length()).trim();
-
-        int i = resto.length() - 1;
-
-        while (i >= 0 && !Character.isWhitespace(resto.charAt(i))) {
-            i--;
-        }
-
-        return resto.substring(0, i).trim();
     }
 
     private ResultadoComando iniciarEscritura(String nombre, boolean agregar)
