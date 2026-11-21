@@ -15,6 +15,7 @@ public class SEMANA_6 {
             VentanaConsola ventana = new VentanaConsola(interprete.getPrompt());
 
             ventana.alEnter(e -> {
+<<<<<<< HEAD
                 String comando = ventana.leerComando();
 
                 ventana.linea(ventana.getPrompt() + comando);
@@ -33,6 +34,27 @@ public class SEMANA_6 {
                 }
 
                 ventana.setPrompt(interprete.getPrompt());
+=======
+                String cmd = ventana.leerComando();
+                ventana.linea(ventana.getPrompt() + " " + cmd);
+
+                ResultadoComando res = interprete.ejecutar(cmd);
+
+                if (res != null) {
+                    if (res.debeLimpiar()) {
+                        ventana.limpiar();
+                    }
+                    if (res.getTexto() != null && !res.getTexto().isEmpty()) {
+                        ventana.imprimir(res.getTexto());
+                    }
+                    ventana.setPrompt(interprete.getPrompt());
+                    if (res.debeSalir()) {
+                        ventana.dispose();
+                        return;
+                    }
+                }
+
+>>>>>>> f280c041db01937f7198ec08d6448ef763baba9e
                 ventana.enfocar();
             });
 
