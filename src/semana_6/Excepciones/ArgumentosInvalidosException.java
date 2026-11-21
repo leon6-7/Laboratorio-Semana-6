@@ -8,6 +8,8 @@ package semana_6.Excepciones;
  *
  * @author Abril
  */
-public class ArgumentosInvalidosException {
-    
+public class ArgumentosInvalidosException extends ConsolaException{
+    public ArgumentosInvalidosException(String detalle) {
+        super("Argumentos invalidos: " + detalle);
+    }
 }
