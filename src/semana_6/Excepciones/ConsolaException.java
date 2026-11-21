@@ -8,6 +8,9 @@ package semana_6.Excepciones;
  *
  * @author Abril
  */
-public class ConsolaException {
-    
+public class ConsolaException extends Exception {
+
+    public ConsolaException(String mensaje) {
+        super(mensaje);
+    }
 }

@@ -8,6 +8,15 @@ package semana_6.Excepciones;
  *
  * @author Abril
  */
-public class ArgumentosInvalidosException {
-    
+//El mensaje se muestra en consola
+public class ArgumentosInvalidosException extends ConsolaException {
+    //Tira el mensaje dado
+    public ArgumentosInvalidosException(String mensaje) {
+        super(mensaje);
+    }
+
+    //Mensaje predeterminado
+    public ArgumentosInvalidosException(String comando, String uso) {
+        super("La sintaxis del comando " + comando + " no es correcta.\nUso: " + uso);
+    }
 }
