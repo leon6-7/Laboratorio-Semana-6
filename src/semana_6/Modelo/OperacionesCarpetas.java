@@ -18,13 +18,13 @@ public class OperacionesCarpetas {
         this.sistema = sistema;
     }
 
-    public String mkdir(String nombre) throws ConsolaException {
-        File nuevaCarpeta = sistema.resolverEnActual(nombre);
+    public String mkdir(String... nombre) throws ConsolaException {
+        File nuevaCarpeta = sistema.resolverEnActual(nombre[0]);
         if (nuevaCarpeta.exists()) {
-            throw new ElementoExistenteException("Ya existe una carpeta o archivo con el nombre '" + nombre.trim() + "'.");
+            throw new ElementoExistenteException("Ya existe una carpeta o archivo con el nombre '" + nombre[0].trim() + "'.");
         }
         if (!nuevaCarpeta.mkdir()) {
-            throw new ConsolaException("No se pudo crear la carpeta '" + nombre.trim() + "'.");
+            throw new ConsolaException("No se pudo crear la carpeta '" + nombre[0].trim() + "'.");
         }
         return "Carpeta creada: " + nuevaCarpeta.getName();
     }

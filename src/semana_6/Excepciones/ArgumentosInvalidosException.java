@@ -9,7 +9,11 @@ package semana_6.Excepciones;
  * @author Abril
  */
 public class ArgumentosInvalidosException extends ConsolaException{
-    public ArgumentosInvalidosException(String detalle) {
-        super("Argumentos invalidos: " + detalle);
+     public ArgumentosInvalidosException(String mensaje) {
+        super(mensaje);
+    }
+     
+    public ArgumentosInvalidosException(String detalle, String uso) {
+         super("La sintaxis del comando " + detalle + " no es correcta.\nUso: " + uso);
     }
 }

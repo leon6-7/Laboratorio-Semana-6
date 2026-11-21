@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package semana_6;
 
-/**
- *
- * @author Abril
- */
+import javax.swing.SwingUtilities;
+import semana_6.Control.Interprete;
+import semana_6.Modelo.SistemaArchivos;
+import semana_6.Vista.VentanaConsola;
+
 public class SEMANA_6 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        SwingUtilities.invokeLater(() -> {
+            SistemaArchivos sistema = new SistemaArchivos();
+            Interprete interprete = new Interprete(sistema);
+            VentanaConsola ventana = new VentanaConsola(interprete.getPrompt());
+
+            ventana.mostrar();
+        });
     }
-    
 }
