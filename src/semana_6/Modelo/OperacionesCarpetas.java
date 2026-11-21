@@ -1,9 +1,9 @@
-package modelo;
+package semana_6.Modelo;
 
-import excepciones.ConsolaException;
-import excepciones.ElementoExistenteException;
-import excepciones.ElementoNoEncontradoException;
-import excepciones.NombreInvalidoException;
+import semana_6.Excepciones.ConsolaException;
+import semana_6.Excepciones.ElementoExistenteException;
+import semana_6.Excepciones.ElementoNoEncontradoException;
+import semana_6.Excepciones.NombreInvalidoException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
