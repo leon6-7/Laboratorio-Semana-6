@@ -8,6 +8,8 @@ package semana_6.Excepciones;
  *
  * @author ANGILI PALACIOS
  */
-public class NombreInvalidoException {
-    
+public class NombreInvalidoException extends ConsolaException{
+  public NombreInvalidoException(String nombre)  {
+        super("Nombre no valido: '" + nombre );
+    }  
 }

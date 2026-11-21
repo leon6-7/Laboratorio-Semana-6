@@ -8,6 +8,8 @@ package semana_6.Excepciones;
  *
  * @author ANGILI PALACIOS
  */
-public class ElementoNoEncontradoException {
-    
+public class ElementoNoEncontradoException extends ConsolaException{
+    public ElementoNoEncontradoException(String nombre) {
+        super("El sistema no puede encontrar '" + nombre );
+    }
 }

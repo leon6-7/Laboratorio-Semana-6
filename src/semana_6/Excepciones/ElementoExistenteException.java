@@ -8,6 +8,8 @@ package semana_6.Excepciones;
  *
  * @author ANGILI PALACIOS
  */
-public class ElementoExistenteException {
-    
+public class ElementoExistenteException extends ConsolaException {
+    public ElementoExistenteException(String nombre) {
+        super("Ya existe un archivo o carpeta con el nombre " + nombre );
+    }
 }

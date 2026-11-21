@@ -8,6 +8,9 @@ package semana_6.Excepciones;
  *
  * @author ANGILI PALACIOS
  */
-public class ComandoDesconocidoException {
+public class ComandoDesconocidoException extends ConsolaException{
+    public ComandoDesconocidoException(String cmd) {
+        super("'" + cmd + "' no se reconoce como un comando interno o externo");
+    }
     
 }
