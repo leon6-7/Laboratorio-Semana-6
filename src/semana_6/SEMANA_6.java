@@ -15,7 +15,7 @@ public class SEMANA_6 {
             VentanaConsola ventana = new VentanaConsola(interprete.getPrompt());
 
             ventana.alEnter(e -> {
-<<<<<<< HEAD
+
                 String comando = ventana.leerComando();
 
                 ventana.linea(ventana.getPrompt() + comando);
@@ -34,7 +34,7 @@ public class SEMANA_6 {
                 }
 
                 ventana.setPrompt(interprete.getPrompt());
-=======
+
                 String cmd = ventana.leerComando();
                 ventana.linea(ventana.getPrompt() + " " + cmd);
 
@@ -53,8 +53,6 @@ public class SEMANA_6 {
                         return;
                     }
                 }
-
->>>>>>> f280c041db01937f7198ec08d6448ef763baba9e
                 ventana.enfocar();
             });
 

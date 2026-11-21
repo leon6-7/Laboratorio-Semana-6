@@ -103,9 +103,17 @@ public class SistemaArchivos {
         return false;
     }
 
-    public File resolverEnActual(String nombre) throws NombreInvalidoException {
-        validarNombre(nombre);
-        return new File(carpetaActual, nombre.trim());
+    public File resolverEnActual(String nombre) throws ConsolaException {
+    validarNombre(nombre);
+
+    File archivo = new File(carpetaActual, nombre.trim());
+    File archivoNormalizado = obtenerCanonicaOAbsoluta(archivo);
+
+    if (!estaDentroDeRaiz(archivoNormalizado)) {
+        throw new ConsolaException("No se permite acceder fuera de la carpeta raíz.");
+    }
+
+        return archivoNormalizado;
     }
 
     public void cd(String nombreCarpeta) throws ConsolaException {
