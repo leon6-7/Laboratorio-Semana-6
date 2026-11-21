@@ -67,7 +67,13 @@ public class Interprete {
             throw new ComandoDesconocidoException(partes[0]);
         }
 
-        List<String> argumentos = Arrays.asList(partes).subList(1, partes.length);
+        List<String> argumentos;
+
+        if (comando == Comando.CD && partes.length > 1) {
+            argumentos = Arrays.asList(limpia.substring(partes[0].length()).trim());
+        } else {
+            argumentos = Arrays.asList(partes).subList(1, partes.length);
+        }
 
         validarArgumentos(comando, argumentos.size());
 
